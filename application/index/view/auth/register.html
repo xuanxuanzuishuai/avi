@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+ <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册悦心旅游</title>
+<meta name="author" content="悦心旅游" />
+<meta name="copyright" content="悦心旅游网络科技有限公司" />
+ <link href="__STATIC__/css/tts_confirm_alpha@37a361fcff327ec1ca2275153556c825_14.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/js/fish.1.4.5.js"></script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/regstep2.0.1.css" />
+    <script type="text/javascript" src="__STATIC__/js/regstep2.0.1.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/bootstrap.min.css">
+<script type="text/javascript" src="__STATIC__/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/regstep1.0.1.css" />
+<script type="text/javascript" src="__STATIC__/js/fish.1.4.7.js"></script>
+<script type="text/javascript" src="__STATIC__/js/mcityselect.js"></script>
+<script type="text/javascript" src="__STATIC__/js/regstep1.0.1.js"></script>
+</head>
+<body>
+     <form method="post" action="{:url('Index/Auth/doRegister')}">
+         <div id="register" style="display:block">
+         <img src="__STATIC__/images/xuanxuan.jpg" style="position:absolute;top:280px;right:270px;width:300px;height:300px;">
+    <h1 class="header clearfix">
+        <a title="悦心旅游" href="http://www.ly.com">
+            <img alt="悦心旅游" src="__STATIC__/picture/reg20151231102443.png" />
+        </a>
+        <!-- 欢迎注册 -->
+        <div class="welcome">
+            <h2>欢迎注册</h2>
+        </div>
+        <!-- 已有会员账号的登录入口 -->
+        <div class="login_entry">
+            <p>已有悦心账号？<a href="{:url('index/auth/login')}">登录</a></p>
+        </div>
+    </h1>
+    <div class="content">
+         <div class="panel">
+             <div class="panel_top"></div>
+             <div class="panel_middle step1">
+            <ul class="step_name clearfix">
+                <li class="step_name_1">填写注册信息</li>
+                <li class="step_name_2">接受并填写验证码</li>
+                <li class="step_name_3">注册成功</li>
+            </ul>
+            <div class="container" style="padding-left:18%;margin-top:15px">
+				<div class="form-group">
+				  <label for="exampleInputEmail1">手机号</label>
+				  <input type="text" class="form-control" id="tel" placeholder="手机号" name="tel" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none;" id="mention5">
+					<font color="red">手机号格式不正确</font>
+				</div>
+				<div class="form-group" style="display:none;" id="mention6">
+					<font color="red">手机号已被注册</font>
+				</div>
+				<div class="form-group">
+				  <label for="exampleInputEmail1">用户名</label>
+				  <input type="text" class="form-control" id="username" placeholder="请输入用户名" name="username" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none;" id="mention1">
+					<font color="red">用户名长度小于5位</font>
+				</div>
+				<div class="form-group" style="display:none;" id="mention2">
+					<font color="red">用户名重复</font>
+				</div>
+				<div class="form-group">
+				  <label for="exampleInputPassword1">登录密码</label>
+				  <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none;" id="mention3">
+		 			<font color="red">密码长度小于5位</font>
+				</div>
+				<div class="form-group">
+				  <label for="repassword">确认密码</label>
+				  <input type="password" class="form-control" id="repassword" placeholder="请输入密码" name="repassword" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none;" id="mention4">
+					<font color="red">两次密码不一致</font>
+		  		</div>
+				<div class="form-group" id="code">
+					{:captcha_img()}
+					<input type="text" name="code" id="lili" placeholder="请输入验证码" class="form-control" style="width:110px;margin-top:10px" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none" id="lili2">
+					<font color="red">验证码错误</font>
+				</div>
+				<div class="checkbox">
+				  <label>
+					<input type="checkbox"> 记住我
+		 		  </label>
+				</div>
+                 <p class="btn-default" disabled href="javascript:void(0)" id="submit" style="width:200px;height:30px;background-color: #167de7;border:none;border-radius:3%;color:white;text-align:center;line-height:30px">
+                             立即注册
+                 </p> 
+		      </div>     
+            </div>
+        </div>
+</div></div>
+    <div id="register2" style="display:none">
+    <h1 class="header clearfix">
+            <a title="悦心旅游" href="http://www.ly.com">
+                <img alt="悦心旅游" src="__STATIC__/picture/reg20151231102443.png" />
+            </a>
+            <!-- 欢迎注册 -->
+            <div class="welcome">
+                <h2>欢迎注册</h2>
+            </div>
+            <!-- 已有会员账号的登录入口 -->
+            <div class="login_entry">
+                <p>已有悦心账号？<a href="https://passport.ly.com/">登录</a></p>
+            </div>
+        </h1>
+        <div class="content">
+        <div class="panel">
+            <div class="panel_top">
+            </div>
+            <div class="panel_middle step2">
+                <ul class="step_name clearfix">
+                    <li class="step_name_1">填写注册信息</li>
+                    <li class="step_name_2">接受并填写验证码</li>
+                    <li class="step_name_3">注册成功</li>
+                </ul>
+                <div class="mobile_verif_code_wrapper">
+                        <p class="step2_prompt_line">
+                            <label>
+                            </label>
+                            <span class="medium_prompt">悦心旅游已经向您的手机 <em>13637475832</em>
+                                <input type="hidden" name="mobilePhone" id="mobilePhone" value="13637475832" />
+                                发送了注册验证码
+                            </span>
+                        </p>
+                        <p class="step2_input_line">
+                            <label>
+                                <span class="requied_symbol">*</span>验证码</label><input  name="mobileVerifCode"
+                                    class="input mobile_verif_code" maxlength="6" />
+                                    <input type="text" id="test" name="test" style="display:none;" />
+                                    <span class="prompt"></span></p>
+                        <p class="step2_btn_line" style="margin-top: 15px;">
+                            <label class="c_step2_btn_line_label">
+                            </label>
+                            <input id="step2Submit" type="submit" class="step2_submit" href="{:url('Index/Auth/doRegister')}" style="border:none;"value="确认并提交注册" />
+                        <input type="hidden" id="Token" name="Token" value="130128022126168207013166069044081241104012110104" />
+               </div>
+                <div class="no_get">没有收到验证码？</div>
+                <div class="resend_wrapper none">
+                    <p class="step2_prompt_line">
+                        <label>
+                        </label>
+                        <span class="small_prompt">如果5分钟内没收到验证码，请重新申请验证码：</span>
+                    </p>
+                    <p class="c_step2_register_info_line">
+                        <label for="verifCode" class="label">
+                            图形验证码
+                        </label>
+                        <input type="text" value="" name="step2verifCode" maxlength="4" id="step2verifCode"
+                            class="text-box input verif_code">
+                        {:captcha_img()}
+                        <span style="color: #999; font-family: SimSun;">看不清？ <span id="cStep2changeVerifCodeImg"
+                            class="cStep2_change_verif_code_img">换一张</span> </span><span class="c_new_prompt">
+                        </span>
+                    </p>
+                    <p class="step2_btn_line" style="margin-top: 5px;">
+                        <label>
+                        </label>
+                        <a id="resend" class="resend_disabled" href="javascript:void(0);">重新发送短信</a>
+                        <span id="cMyPrompt" class="prompt"></span>
+                    </p>
+                </div>
+                <div class="FAQ step2_FAQ">
+                    <h3>
+                        验证手机常见问题
+                    </h3>
+                    <ul>
+                        <li>
+                            <p class="question">
+                                问：为什么要进行手机验证？
+                            </p>
+                            <p class="answer">
+                                答：当您遗忘密码时，可通过验证手机找回密码，还可加快电话预订的速度。
+                            </p>
+                        </li>
+                        <li>
+                            <p class="question">
+                                问：如果多次长时间收不到验证码怎么办？
+                            </p>
+                            <p class="answer">
+                                答：您可以尝试重新发送，若仍未收到，请查看手机是否装有防火墙拦截了短信。
+                            </p>
+                        </li>
+                        <li>
+                            <p class="question">
+                                问：验证过的手机今后还可以修改吗？
+                            </p>
+                            <p class="answer">
+                                答：手机验证通过后，即生成悦心账户。验证手机是可以修改的，修改后账户名也将一同修改为新手机号码。
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+     <div class="footer">
+    Copyright&nbsp;&copy;&nbsp;2002-2016&nbsp;版权所有&nbsp;同程网络科技股份有限公司&nbsp;<a target="_blank" href="https://security.40017.cn/cn/img/new_ui/public/images/ICP.jpg" class="icp_num">苏ICP证B2-20100204</a>
+    </div>
+</form>
+<script type="text/javascript" src="__STATIC__/js/c_0_1.js"></script>
+<script type='text/javascript' src="__STATIC__/js/vst.js" charset="utf-8"></script>  
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c6a93e2a75a5b1ef9fb5d4553a2226e5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+  	function judge(){
+            var h= document.getElementById('tel').value.length;
+  			var x=document.getElementById("username").value.length;
+  			var y=document.getElementById("password").value.length;
+  			var z=document.getElementById("repassword").value.length;
+		  	if (h == 11 && y == z && z >= 6 && x >= 4) {
+		  		$("#submit").prop({
+		  			"disabled" : false
+		  		});
+		  	}
+  	}
+	
+	$("#tel").blur(function(){
+  		var x=document.getElementById("tel").value.length;
+  			if(x < 11) {
+  				$("#mention5").css("display", "block");
+  			}
+  		$.post("{:url('Index/Auth/doTel')}", {tel:$("#tel").val()}, function($data){
+  			if($data == "该手机号已被注册") {
+  				$("#mention6").css("display", "block");
+  			}
+  		}, 'json');
+  		judge();
+  	});
+  	$("#tel").focus(function(){
+  		$("#mention5").css("display", "none");
+  		$("#mention6").css("display", "none");
+  	});
+  	$("#username").blur(function(){
+  		var x=document.getElementById("username").value.length;
+  			if(x < 5) {
+  				$("#mention1").css("display", "block");
+  			}
+  		$.post("{:url('Index/Auth/doUsername')}", {username:$("#username").val()}, function($data){
+  			if($data == "用户名重复") {
+  				$("#mention2").css("display", "block");
+  			}
+  		}, 'json');
+  		judge();
+  	});
+  	$("#username").focus(function(){
+  		$("#mention1").css("display", "none");
+  		$("#mention2").css("display", "none");
+  	});
+  	$("#password").blur(function(){
+  		var x=document.getElementById("password").value.length;
+  			if(x <= 5) {
+  				$("#mention3").css("display", "block");
+  			}
+  			judge();
+  	});
+  	$("#password").focus(function(){
+  		$("#mention3").css("display", "none");
+  		$("#mention4").css("display", "none");
+  	});
+
+  	$("#repassword").blur(function(){
+  		if ($("#password").val() != $("#repassword").val()) {
+  			$("#mention4").css("display", "block");
+  		}
+  		judge();
+  	})
+  	$("#repassword").focus(function(){
+  		if ($("#password").val() != $("#repassword").val()) {
+  			$("#mention4").css("display", "none");
+  		}
+  		judge();
+  	});
+  	$.post("{:url('Index/Auth/doUsername')}", {username:$("#username").val()}, function($data){
+  			if($data == "用户名重复") {
+  				$("#mention2").css("display", "block");
+  			}
+  		}, 'json');
+	$("#lili").blur(function(){
+		$.post("{:url('Index/Auth/confirmCode')}", {codeNum:$("#lili").val()},function($data){
+			if($data == 1) {
+				$("#lili2").css("display", "block");
+			}
+		}, 'json');
+        judge();
+	});
+	
+    $("#submit").click(function(){
+        $("#register").css("display","none");
+         $("#register2").css("display","block");
+    });
+  </script> 
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>网页模板素材 - 首页</title>
+<meta name="keywords" content="悦心石海,僰王山,悦心旅游,网页模板素材,悦心旅游景点,宜宾旅游" />
+<meta name="description" content="网页模板素材是悦心最大门户网站，本站提供丰富的悦心旅游快讯、悦心旅游景点、悦心旅游线路、悦心旅行社、悦心酒店宾馆、悦心旅游人才和网页模板素材特色导航信息，以及优质的网页模板素材上投诉和网页模板素材上咨询服务。" />
+ <link href="__STATIC__/css/tts_confirm_alpha@37a361fcff327ec1ca2275153556c825_14.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="__STATIC__/css/style1.css">
+<script type="text/javascript" src="__STATIC__/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/jquery.scrollfollow.js"></script>
+<script type="text/javascript" src="__STATIC__/js/flash.js"></script>
+<script type="text/javascript" src="__STATIC__/js/int.js"></script>
+<style>
+        .q_header_main{
+            height:36px;
+            background-color:#f5f5f5;
+        }
+        .q_header_mini_nav{
+            position:absolute;
+            top:5px;
+            left:270px;
+        }
+        .q_header_username{
+            position:absolute;
+            top:5px;
+            right:320px;
+        }
+        .q_header_register{
+            position:absolute;
+            top:5px;
+            right:220px;
+        }
+        .q_header_tnav_omenu_link{
+            position:absolute;
+            top:5px;
+            right:260px;
+        }
+    </style>
+</head>
+<body >
+<div class="q_header_main" data-hfchannel="package" data-hffile="header_main_mini">
+            <div class="q_header_tnav">
+                <ul>
+                 {empty name="$Think.session.username"}
+                    <li  class="q_header_username" style="margin-right:30px;"><a href="{:url('index/auth/login')}">立即登录</a></li>
+                    <li class="q_header_register"><a href="{:url('Index/Auth/register')}">立即注册</a></li>
+                    {/empty}
+                    {notempty name="$Think.session.username"}
+                    <li class="q_header_username">你好 &nbsp;<font color="red">{$Think.session.username}</font></li>
+                    <li class="q_header_register"><a href="{:url('index/Auth/logout')}">退出</a></li>
+                    {/notempty}
+                    <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link">{notempty name="$Think.session.username"}我的悦心{/notempty}</a></dt>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="q_header_mini_nav"> <a href="" class="q_header_mini_link">欢迎来到悦心网</a>
+            </div>
+   </div>
+    <div class="order_hd2 ctrip container" style="background-color:#2c87b5;">
+        <div class="header_main cf">
+            <a href="__STATIC__/https://ttsu3.package.qunar.com/supplier_shop.jsp" class="dl_name">
+                            <div style="margin-top:15px;margin-left:50px;">舒心之旅</div>
+                    </a>
+            <div class="phongbox">
+                <p class="phonenum" style="margin-top:13px;">18034233472
+                </p>
+                <p class="weekday" stlye="margin-top:5px;">周一-周日 : 00:00 - 24:00</p>
+            </div>
+            <i class="phoneico" style="margin-top:16px;"></i>
+        </div>
+    </div>
+<div id="nav">
+    <ul>
+        <li><a href="/index.aspx" class="a1">首页</a></li>
+        <li><a href="/eat" class="a2">吃</a></li>
+        <li><a href="/live" class="a3">住</a></li>
+        <li><a href="/traffic" class="a4">行</a></li>
+        <li><a href="/index/index/tour" class="a5">游</a></li>
+        <li><a href="/shop" class="a6">购</a></li>
+        <li><a href="/play" class="a7">娱</a></li>
+    </ul>
+</div> 
+<script type="text/javascript">
+function select_search_type(n){
+    document.getElementById('search_type1').className='';
+    document.getElementById('search_type2').className='';
+    document.getElementById('search_type3').className='';
+    document.getElementById('search_type'+n).className='current';
+    document.getElementById('search_type').value=n;
+}
+</script><div id="main">
+    <div id="cate">
+        <a class="prev"></a>
+        <div class="scroll">
+            <ul>
+                <li>
+                    <strong>美食</strong>
+                    <a href="/eat/feature.aspx">特色美食</a>|<a href="/eat/foodshops.aspx">名菜馆</a>|<a href="/eat/culture.aspx">美食文化</a><br />
+                    <!--<a href="#">美食地图</a>|--><a href="#">美食达人</a>
+                </li>
+                <li>
+                    <strong>住宿</strong>
+                    <a href="/live/hotel_list.aspx?hotel_type=1">星级酒店</a>|<a href="/live/hotel_list.aspx?hotel_type=2">经济宾馆</a>|<a href="/live/hotel_list.aspx?hotel_type=4">农家乐</a><br />
+                    <a href="http://www.cssmoban.com/?Live/" target="_blank" class="blue">酒店预订</a>
+                </li>
+                <li>
+                    <strong>旅游</strong>
+                    <a href="/tour/scenic.aspx">旅游景点</a>|<a href="/tour/line.aspx">精品路线</a>|<a href="/tour/rural.aspx">乡村旅游</a><br />
+                    <a href="/tour/guides.aspx">导游介绍</a>|<a href="//diy" class="blue">线路定制</a>|<a href="tour/travel_agency.aspx">旅行社</a>
+                </li>               
+                <li>
+                    <strong>购物</strong>
+                    <a href="/shop/specialty.aspx">特产名物</a>|<a href="/shop/shopplace.aspx">购物场所</a>|<a href="/shop/article_list.aspx?cid=16">购物达人</a><br />
+                    <a href="/shop/article_list.aspx?cid=11">优惠活动</a>|<a href=" http://www.cssmoban.com/?" class="red b">旅游商城</a>
+                </li>
+                <li>
+                    <strong>娱乐</strong>
+                    <a href="/play/match.aspx?type=2" class="b">旅游节庆</a>|<a href="/play/match.aspx?type=1">民族特色演出</a><br />
+                    <a href="/play/match.aspx?type=3">体育赛事</a>|<a href="/play/playplace.aspx">娱乐场所</a>
+                </li>
+                <li>
+                    <strong>服务</strong>
+                    <a href="/service/info.aspx">旅游概况</a>|<a href="/service/article.aspx">旅游资讯</a>|<a href="#">游客咨询</a><br />
+                    <a href="/service/interaction.aspx">旅游互动</a>|<a href="/service/toolinfo.aspx">旅行工具箱</a>
+                </li>
+            </ul>           
+        </div>      
+        <a class="next"></a>
+    </div>  <div id="index">
+        <div class="indexLeft">
+            <div class="itemA" id="banner"></div>
+<script type="text/javascript" src="__STATIC__/js/flashObject.js"></script>
+<script type="text/javascript">
+    var flash = new sohuFlash("__STATIC__/flash/banner.swf", "20", 730, 300, "7");
+    flash.addParam("quality", "high");
+    flash.addParam("wmode", "transparent");
+    flash.addVariable("image","__STATIC__/images/flashfocus0.jpg|__STATIC__/images/flashfocus1.jpg|__STATIC__/images/flashfocus2.jpg|__STATIC__/images/flashfocus3.jpg");
+    flash.addVariable("stitle","石海发现之旅|苗人习俗文化|探寻神秘僰人|倾情苗族歌舞");
+    flash.addVariable("info", "<h2><a href='http://www.cssmoban.com/?play/match_detail.aspx?mid=1' target='_blank'>石海发现之旅</a></h2><p>悦心是一片神奇、美丽的土地。境内旅游资源丰富而独特。这里有国家重点风景名胜区、国家4A级景区、四川首家世界地质公园</p>|<h2><a href='http://www.cssmoban.com' target='_blank'>苗人习俗文化</a></h2><p>族生活比较简朴，历来主食糯米，解放后逐渐改食籼米。辅之以小米、红苕、苞谷等。副食有家畜禽类，间有野生禽兽肉等。</p>|<h2><a href='http://www.cssmoban.com' target='_blank'>探寻神秘僰人</a></h2><p>在地球上消失了400多年的僰人如今“复活”了，专家们近日在四川省宜宾市悦心县发现了僰人后裔，据估计，总数可能超过万人。</p>|<h2><a href='http://www.cssmoban.com' target='_blank'>倾情苗族歌舞</a></h2><p>4月29日，悦心县500多名苗族干部、群众和古宋社区群众，身着节日盛装，走上街头，通过开展大游行、文艺表演等形式</p>");
+    flash.addVariable("stopTime","3000");
+    flash.write("banner");
+</script>
+            <div class="itemB">
+                <div class="player" id="picPlayer">
+<script type="text/javascript">
+    var pic_width = 300; //图片宽度
+    var pic_height = 200; //图片高度
+    var button_pos = 4; //按扭位置 1左 2右 3上 4下
+    var stop_time = 5000; //图片停留时间(1000为1秒钟)
+    var show_text = 1; //是否显示文字标签 1显示 0不显示
+    var txtcolor = "444444"; //文字色
+    var bgcolor = "ffffff"; //背景色
+    var imag = new Array();
+    var link = new Array();
+    var text = new Array(); 
+    imag[1] = "__STATIC__/images/133454091856436111.jpg";
+    link[1] = "service/article_detail.aspx?aid=20";
+    text[1] = "童心向党歌飞扬";
+        imag[2] = "__STATIC__/images/1334540813484828163.jpg";
+    link[2] = "service/article_detail.aspx?aid=19";
+    text[2] = "庆盛世歌团结 迎接第四届苗族花山节";
+        imag[3] = "__STATIC__/images/133454069963991586.jpg";
+    link[3] = "service/article_detail.aspx?aid=14";
+    text[3] = "国庆黄金周期间 悦心石海隆重上演";
+        imag[4] = "__STATIC__/images/135778331093068579.jpg";
+    link[4] = "service/article_detail.aspx?aid=94";
+    text[4] = "加强交流  共谋发展";
+        
+    var swf_height = show_text == 1 ? pic_height + 45 : pic_height;
+    var pics = "", links = "", texts = "";
+    for (var i = 1; i < imag.length; i++) {
+        pics = pics + ("|" + imag[i]);
+        links = links + ("|" + link[i]);
+        texts = texts + ("|" + text[i]);
+    }
+    pics = pics.substring(1);
+    links = links.substring(1);
+    texts = texts.substring(1);
+    document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://www.cssmoban.com/?pub/shockwave/cabs/flash/swflash.cabversion=6,0,0,0" width="' + pic_width + '" height="' + swf_height + '">');
+    document.write('<param name="movie" value="flash/focus.swf">');
+    document.write('<param name="quality" value="high">');
+    document.write('<param name="wmode" value="transparent">');
+    document.write('<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&pic_width=' + pic_width + '&pic_height=' + pic_height + '&show_text=' + show_text + '&txtcolor=' + txtcolor + '&bgcolor=' + bgcolor + '&button_pos=' + button_pos + '&stop_time=' + stop_time + '">');
+    document.write('<embed src="__STATIC__/flash/focus.swf" wmode="transparent" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&pic_width=' + pic_width + '&pic_height=' + pic_height + '&show_text=' + show_text + '&txtcolor=' + txtcolor + '&bgcolor=' + bgcolor + '&button_pos=' + button_pos + '&stop_time=' + stop_time + '" quality="high" width="' + pic_width + '" height="' + swf_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+    document.write('</object>');
+</script>           
+                </div>
+                <div class="hot">
+                    <ul>
+                                                <li><a href="service/article_detail.aspx?aid=101" target="_blank">国土资源部世界地质公园网络办主任郑元来兴授课</a></li>
+                                                <li><a href="service/article_detail.aspx?aid=100" target="_blank">悦心县八大项目助推2013旅游发展</a></li>
+                                                <li><a href="service/article_detail.aspx?aid=99" target="_blank">悦心县旅游局开展春节前旅游安全大检查</a></li>
+                                            </ul>
+                </div>
+                <div class="list">
+                    <dl>
+                        <strong>[旅游资讯]<a href="service/article_detail.aspx?aid=101" target="_blank">国土资源部世界地质公园网络办主任</a></strong>
+                        <p><a href="service/article_detail.aspx?aid=101" target="_blank">[全文]</a></p>
+                    </dl>
+                    <ul>
+                                                <li><a target="_blank" href="service/article_detail.aspx?aid=100">悦心县八大项目助推2013旅</a></li>
+                                                <li><a target="_blank" href="service/article_detail.aspx?aid=92">世界地质公园再评估工作座</a></li>
+                                                <li><a target="_blank" href="service/article_detail.aspx?aid=95">悦心世界地质公园启动地质</a></li>
+                                                <li><a target="_blank" href="service/article_detail.aspx?aid=96">悦心世界地质公园召开中期</a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+            <div class="itemC">
+                <ul c>
+                    <li class="s1"><strong>旅游景点</strong><div><a href="tour/scenic_detail.aspx?sid=2" target="_blank"><img src="__STATIC__/upload/scenic/liwangshan.jpg" /></a><em><a href="tour/scenic_detail.aspx?sid=2" target="_blank">僰王山景区</a></em><p>&nbsp; &nbsp; &nbsp; &nbsp; 僰王山原名博望山，她和悦心石海是悦心世界地质公园最耀眼的两颗明珠。僰王山中心景区位于宜宾市兴...<a href="tour/scenic_detail.aspx?sid=2">[详细]</a></p></div></li>
+                    <li class="s2"><strong>精品线路</strong><div><a href="tour/line_detail.aspx?sid=3" target="_blank"><img src="upload/line/wenquan.jpg" /></a><em><a href="tour/line_detail.aspx?lid=3">西部大峡谷温泉、悦心石海三日游</a></em><p><a href="tour/line_detail.aspx?lid=3" target="_blank">[详细]</a></p></div></li>
+                    <li class="s3"><strong>乡村旅游</strong><div><a href="tour/rural_detail.aspx?rid=" target="_blank"><img src="upload/rural/small_" /></a><em><a href="tour/rural_detail.aspx?rid=" target="_blank"></a></em><p><a href="tour/rural_detail.aspx?rid=" target="_blank">[详细]</a></p></div></li>
+                    <li class="s4"><strong>特色演出</strong><div><a href="play/match_detail.aspx?mid="><img src="upload/match/small_" /></a><em><a href="play/match_detail.aspx?mid=" target="_blank"></a></em><p><a href="play/match_detail.aspx?mid=" target="_blank">[详细]</a></p></div></li>
+                    <li class="s5"><strong>旅游节庆</strong><div><a href="play/match_detail.aspx?mid=4"><img src="upload/match/small_1334304624467582952.jpg" /></a><em><a href="play/match_detail.aspx?mid=4" target="_blank">大坝高桩节</a></em><p>&nbsp; &nbsp; &nbsp; &nbsp; 悦心县-大坝景区高桩，高桩又称高桩戏，一台高桩就是一组戏。表演时，主角站在离戏台三米高的铁桩上...<a href="play/match_detail.aspx?mid=4" target="_blank">[详细]</a></p></div></li>
+                </ul>
+            </div>
+            <div class="itemD" id="btnPic">
+<script type="text/javascript">
+    var flash = new sohuFlash("__STATIC__/flash/pic.swf", "20", 730, 120, "7");
+    flash.addParam("quality", "high");
+    flash.addParam("wmode", "transparent");
+    flash.write("btnPic");
+</script>
+            </div>
+            <div class="itemE">
+                <label>第一时间知道特价旅游信息<font>(*此服务随时可取消)</font></label>
+                <input type="text" value="常用EMAIL地址" onblur="if (value ==''){value='常用EMAIL地址'}" onfocus="if (value =='常用EMAIL地址'){value =''}" value="常用EMAIL地址" />
+                <button type="submit">订阅</button>
+                <span class="text">分享到：</span>
+                <!-- JiaThis Button BEGIN  -->
+                <div id="jiathis_style_32x32">
+                    <a class="jiathis_button_qzone"></a>
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_tqq"></a>
+                    <a class="jiathis_button_kaixin001"></a>
+                    <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>                
+                </div>
+                <!-- JiaThis Button END -->
+            </div>
+            <div class="itemF">
+                <div class="re">
+                    <div class="item">
+                        <h3 class="on"><span>1</span><strong>推荐酒店</strong></h3>
+                        <div>
+                            <dl><a target="_blank" href="live/hotel_detail.aspx?hotel_id=5"><img src="__STATIC__/upload/hotel/xingwenxian.jpg" /></a><p><strong><a href="live/hotel_detail.aspx?hotel_id=5" target="_blank">悦心县大自然</a></strong>价格：<span>￥188.00元起</span><br /></p></dl>
+                            <ul>
+                                <li><a target="_blank" href="live/hotel_detail.aspx?hotel_id=4">寓苑春宾馆</a></li>
+                                <li><a target="_blank" href="live/hotel_detail.aspx?hotel_id=2">僰苑假日酒店</a></li>
+                             </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3><span>2</span><strong>推荐餐厅</strong></h3>
+                        <div style="display:none">
+                            <dl><a href="eat/foodshops_detail.aspx?fid=5"><img src="upload/foodshops/" /></a><p><strong><a href="eat/foodshops_detail.aspx?fid=5">四川名小吃——刘</a></strong>类型：<span>特色小吃</span><br /></p></dl>
+                            <ul>
+                                                                <li><a target="_blank" href="eat/foodshops_detail.aspx?fid=4">悦心县僰苑假日酒</a></li>
+                                                                <li><a target="_blank" href="eat/foodshops_detail.aspx?fid=3">悦心大酒店餐饮</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3><span>3</span><strong>推荐旅行社</strong></h3>
+                        <div style="display:none">
+                            <dl><a href="tour/travel_agency_detail.aspx?tid=1"><img src="upload/travel_agency/" /></a><p><strong><a href="tour/travel_agency_detail.aspx?tid=1">四川宜宾光大旅行</a></strong></p></dl>
+                            <ul>
+                                                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3><span>4</span><strong>推荐娱乐场所</strong></h3>
+                        <div style="display:none">
+                            <dl><a href="play/playplace_detail.aspx?pid="><img src="upload/playplace/" /></a><p><strong><a href="play/playplace_detail.aspx?pid="></a></strong><!--<br />电话：--></p></dl>
+                            <ul>
+                                                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="maps">
+                    <img src="__STATIC__/images/i4.jpg" />
+                </div>
+                <div class="clearit"></div>
+            </div>
+        </div>
+        <div class="indexRight">
+            <div class="itemA">
+                <h3>虚拟游</h3>
+                <ul><a href="xuniyou/" target="_blank"><img src="__STATIC__/images/i5.jpg" /></a></ul>
+            </div>
+            <div class="itemB">
+                <a href="/tour/scenic_detail.aspx?sid=1"><img src="__STATIC__/images/s2.jpg" /></a>
+                <a href="/tour/scenic_detail.aspx?sid=2"><img src="__STATIC__/images/s3.jpg" /></a>
+                <img src="__STATIC__/images/s4.jpg" />
+            </div>
+            <div class="itemC">
+                <h3>行程安排</h3>
+                <ul>
+                    <li><label>行程要求</label><select><option>请选择</option></select></li>
+                    <li><label>交通方式</label><select><option>请选择</option></select></li>
+                    <li><label>旅行时间</label><select><option>请选择</option></select></li>
+                    <li><label>价格区间</label><select><option>请选择</option></select></li>
+                    <li><label>个人喜好</label><input type="checkbox" />美食 <input type="checkbox" />自由<br /><input type="checkbox" />景观 <input type="checkbox" />民族文化</li>
+                    <li><button type="submit" onclick="javascript:window.location.href='/tour/line.aspx'">确 定</button></li>
+                </ul>
+            </div>
+            <div class="itemD">
+                <p><a href="/diy/" target="_blank">定制我的线路</a></p>
+            </div>
+            <div class="itemE">
+                {notempty name="$Think.session.username"}
+                <img src="__STATIC__/images/xuanxuan3.jpg" style="height:160px;width:200px;margin-top:10px;margin-left:10px">
+                {/notempty}
+                {empty name="$Think.session.username"}
+                <a href="{:url('Index/Auth/register')}"><h3>立即注册</h3></a>
+                <form action="{:url('index/auth/doLogin')}" method="post">
+                    <ul>
+                        <li><input type="text" class="input" placeholder="手机号" name="tel" id="tel"/></li>
+                        <li><input type="password" class="input"  placeholder="请输入密码" name="password" id="password"/></li>
+                        <li><input type="checkbox" class="checkbox" />记住登录<a href="#">忘记了密码？</a></li>
+                        <li><button type="submit" id="submit">立即登录</button></li>
+                    </ul>
+                </form>
+                {/empty}
+            </div>
+            <div class="itemF">
+                <h3>旅游小贴士</h3>
+                <ul>
+                    <li><a href="http://www.cssmoban.com/?Travel/" target="_blank" class="a1">门票预订</a></li>
+                    <li><a href="http://www.cssmoban.com/?Live/" target="_blank" class="a2">酒店预订</a></li>
+                    <li><a href="http://www.cssmoban.com/" target="_blank" class="a3">天气预报</a></li>
+                    <li><a href="/service/knowledge_list.aspx" target="_blank" class="a4">出游常识</a></li>
+                    <li><a href="/service/faq.aspx" target="_blank" class="a5">常见问题</a></li>
+                    <li><a href="/service/yellowpage.aspx" target="_blank" class="a6">常用电话</a></li>
+                    <li><a href="http://www.cssmoban.com/" target="_blank" class="a7">列车查询</a></li>
+                    <li><a href="http://www.cssmoban.com/" target="_blank" class="a8">航班查询</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearit"></div>
+        <div class="friendLink">
+            <strong>友情链接</strong>
+            <ul>
+                                <li><a href="http://www.cssmoban.com/" title="http://www.yibin.gov.cn/"  target="_blank"><img title="中国宜宾" src="__STATIC__/upload/link/yibin.gif" width="115px" height="43px"/></a></li>
+                                <li><a href="http://www.cssmoban.com/" title="http://www.ems517.com/"  target="_blank"><img title="峨眉山" src="__STATIC__/upload/link/emeishan.gif" width="115px" height="43px"/></a></li>
+                            </ul>
+            <dl>
+                                <dd><a href="http://www.cssmoban.com/?" target="_blank">悦心旅游商城</a></dd>
+                                <dd><a href="http://www.cssmoban.com" target="_blank">悦心县旅游政务网</a></dd>
+                                <dd><a href="http://www.cssmoban.com" target="_blank">悦心农家乐协会</a></dd>
+                            </dl>
+        </div>
+    </div>
+        <div id="footer">
+        <div class="nav">
+            <ul>
+                                <li><a href="/service/info_view.aspx?aid=5" target="_blank">关于我们</a></li>
+                                <li><a href="/service/info_view.aspx?aid=6" target="_blank">广告服务</a></li>
+                                <li><a href="/service/info_view.aspx?aid=7" target="_blank">联系方式</a></li>
+                                <li><a href="/service/info_view.aspx?aid=8" target="_blank">网站声明</a></li>
+                                <li><a href="/service/info_view.aspx?aid=9" target="_blank">诚聘英才</a></li>
+                                <li><a href="/service/info_view.aspx?aid=10" target="_blank">合作伙伴</a></li>
+                                <li><a href="#">返回顶部</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <div class="l">
+&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+</div>
+<script type="text/javascript">
+        $("#password").val('');
+        $("#tel").val('');
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="__STATIC__/css/tts_confirm_alpha@37a361fcff327ec1ca2275153556c825_14.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/css/popup_14.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.3.min.js"></script>
+    <style type="text/css">
+    .contract_title {
+        border-bottom: 1px dashed #ddd;
+        color: #218fd5;
+        height: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    .da{
+    	width:200px;
+    	margin-left:90px;
+    }
+    .xiao{
+    	width:100px;
+    	text-align:left;
+    }
+    </style>
+</head>
+
+<body>
+    <link data-hfstamp="20161208184117" id="hf-style" data-hffile="header_mini_styles" rel="stylesheet" href="__STATIC__/css/header_main_mini@16f266800ab426279b35fe22dbc8a8e1_14.css">
+    <div class="q_header q_header_package q_header_package_mini">
+        <div class="q_header_main" data-hfchannel="package" data-hffile="header_main_mini">
+            <div class="q_header_logo">
+                <a href="__STATIC__/http://www.qunar.com/" target="_top" title="悦心网首页" hidefocus="on"></a>
+            </div>
+            <div class="q_header_tnav">
+                <ul>
+                {empty name="$Think.session.username"}
+                    <li id="__loginInfo_u__" class="q_header_username"><a href="{:url('index/auth/login')}" hidefocus="on" rel="nofollow">登录</a></li>
+                    <li id="__loginInfo_r__" class="q_header_register"><a href="{:url('index/auth/register')}" hidefocus="on" rel="nofollow">注册</a></li>
+                     <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link"><span class="q_header_tnav_omenu_title" id="__orderInfo_t__"><b>我的悦心</b></span></a></dt>
+                        </dl>
+                    </li>
+                    {/empty}
+                 {notempty name="$Think.session.username"}
+                     <li id="__loginInfo_u__" class="q_header_username"> 你好: </li>
+                        <li id="__loginInfo_r__" class="q_header_register">{$Think.session.username}</li>
+                  
+                    <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link"><span class="q_header_tnav_omenu_title" id="__orderInfo_t__"><a href="/index/auth/logout">退出</a></span></a></dt>
+                        </dl>
+                    </li>
+                    <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link"><span class="q_header_tnav_omenu_title" id="__orderInfo_t__"><a href="/index/auth/logout">我的悦心</a></span></a></dt>
+                        </dl>
+                    </li>
+                      {/notempty}
+                </ul>
+            </div>
+            <div class="q_header_mini_nav"> <a href="__STATIC__/http://www.qunar.com/" class="q_header_mini_link" title="悦心网首页">欢迎来到悦心网</a>
+            </div>
+        </div>
+    </div>
+    <div class="order_hd2 ctrip ">
+        <div class="header_main cf">
+            <a href="__STATIC__/https://ttsu3.package.qunar.com/supplier_shop.jsp" class="dl_name">
+                            舒心之旅
+                    </a>
+            <div class="phongbox">
+                <p class="phonenum">18034233472
+                </p>
+                <p class="weekday">周一-周日 : 00:00 - 24:00</p>
+            </div>
+            <i class="phoneico"></i>
+        </div>
+    </div>
+     <div id="nowzhifu">
+                    <div class="confirmZhifu"  id="confirmZhifu" style="width:300px;position:absolute;top:180px;left:300px;font-size:16px;background:#FFF200;padding:30px;color:#E61515;">
+                    <div style="text-align:center;">尊敬的&nbsp;<font size="5px;">{$Think.session.username}</font>&nbsp;您好</div>
+                    <div style="text-align:left;">您的订单信息为</div>
+                    {foreach	$arrs	as	$vo}	
+                    <div style="padding-bottom: 5px;padding-top: 6px;color:#00a1e9;"><b><span ></span></b>&nbsp;&nbsp;{$vo.spot ?: $vo.name}</div>
+                    <div class="da"><span class="xiao">单价</span>&nbsp;<b><span>{$vo.ticket}</span></b></div>
+                    <div class="da"><span class="xiao">数量</span>&nbsp;<b><span>{$vo.num}</span></b></div>
+                    <div class="da"><span class="xiao">日期</span>&nbsp;<b><span>{$vo.date}</span></b></div>
+                    <div class="da"><span class="xiao">金额</span>&nbsp;<b><span>{$vo.money}</span></b></div>
+                    {/foreach}
+                    <div style="text-align:right;">总金额&nbsp;<b><span>{$moneys}</span></b></div>
+                    <div stlye="text-align:right;">请扫描右方二维码确认支付</div>
+                    </div>
+                    <div style="position:absolute;top:200px;right:400px" id="trace"><img src="__STATIC__/images/shouqian.jpg" width="200px" height="280px"></div>
+    </div>
+	<script type="text/javascript">
+		$("#trace").click(function(){
+			window.location.href="/index/pay/zhifu";
+		});
+	</script>
+</body>
+</html>

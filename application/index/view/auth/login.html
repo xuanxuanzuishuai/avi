@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+ <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录悦心旅游</title>
+<meta name="author" content="悦心旅游" />
+<meta name="copyright" content="悦心旅游网络科技有限公司" />
+<!--
+<link href="css/base.3.6.1.css" type="text/css" rel="stylesheet" />
+-->
+ <link href="__STATIC__/css/tts_confirm_alpha@37a361fcff327ec1ca2275153556c825_14.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/js/fish.1.4.5.js"></script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/regstep2.0.1.css" />
+    <script type="text/javascript" src="__STATIC__/js/regstep2.0.1.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/bootstrap.min.css">
+<script type="text/javascript" src="__STATIC__/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/regstep1.0.1.css" />
+<script type="text/javascript" src="__STATIC__/js/fish.1.4.7.js"></script>
+<script type="text/javascript" src="__STATIC__/js/mcityselect.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/regstep1.0.1.js"></script>
+</head>
+<body>
+     <form method="post" action="{:url('Index/Auth/doLogin')}">
+    <div id="register" style="display:block">
+    <img src="__STATIC__/images/xuanxuan2.jpg" style="position:absolute;top:240px;right:270px;width:270px;height:270px;">
+    <h1 class="header clearfix">
+        <a title="悦心旅游" href="http://www.ly.com">
+            <img alt="悦心旅游" src="__STATIC__/picture/reg20151231102443.png" />
+        </a>
+        <!-- 欢迎登录 -->
+        <div class="welcome">
+            <h2>欢迎登录</h2>
+        </div>
+        <!-- 已有会员账号的登录入口 -->
+      
+    </h1>
+    <div class="content">
+    
+    <div class="panel">
+        <div class="panel_top"></div>
+        <div class="panel_middle step1">
+            <ul class="step_name clearfix">
+                <li class="step_name_1">填写登录信息</li>
+                <li class="step_name_2"></li>
+                <li class="step_name_3">登录成功</li>
+            </ul>
+          <div class="container" style="padding-left:18%;margin-top:15px">
+			 
+				<div class="form-group">
+				  <label for="exampleInputEmail1">手机号</label>
+				  <input type="text" class="form-control" id="tel" placeholder="手机号" name="tel" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none;" id="mention5">
+					<font color="red">手机号格式不正确</font>
+				</div>
+				<div class="form-group" style="display:none;" id="mention6">
+					<font color="red">用户不存在</font>
+				</div>
+				<div class="form-group">
+				  <label for="exampleInputPassword1">登录密码</label>
+				  <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none;" id="mention3">
+		 			<font color="red">密码长度小于5位</font>
+				</div>
+				<div class="form-group" id="code">
+					{:captcha_img()}
+					<input type="text" name="code" id="lili" placeholder="请输入验证码" class="form-control" style="width:110px;margin-top:10px" style="width:240px">
+				</div>
+				<div class="form-group" style="display:none" id="lili2">
+					<font color="red">验证码错误</font>
+				</div>
+                 <input type="submit" value="立即登录" style="width:200px;height:30px;background-color: #167de7;border:none;border-radius:3%;color:white;text-align:center;line-height:30px">
+          </form>
+			</div>     
+     </div>
+</div>
+</div></div>
+ <div class="footer">
+Copyright&nbsp;&copy;&nbsp;2002-2016&nbsp;版权所有&nbsp;同程网络科技股份有限公司&nbsp;<a target="_blank" href="https://security.40017.cn/cn/img/new_ui/public/images/ICP.jpg" class="icp_num">苏ICP证B2-20100204</a>
+</div>
+
+    <script type="text/javascript">
+  	function judge(){
+            var h= document.getElementById('tel').value.length;
+  			var y=document.getElementById("password").value.length;
+		  	if (h == 11 && y >= 6 ) {
+		  		$("#submit").prop({
+		  			"disabled" : false
+		  		});
+		  	}
+  	}
+	
+	$("#tel").blur(function(){
+  		var x=document.getElementById("tel").value.length;
+  			if(x < 11 || x > 11) {
+  				$("#mention5").css("display", "block");
+  			}
+  		$.post("{:url('Index/Auth/doTelLogin')}", {tel:$("#tel").val()}, function($data){
+  			if($data == "该用户不存在") {
+  				$("#mention6").css("display", "block");
+  			}
+  		}, 'json');
+  		judge();
+  	});
+  	$("#tel").focus(function(){
+  		$("#mention5").css("display", "none");
+  		$("#mention6").css("display", "none");
+      judge();
+  	});
+  	$("#password").blur(function(){
+  		var x=document.getElementById("password").value.length;
+  			if(x <= 5) {
+  				$("#mention3").css("display", "block");
+  			}
+  			judge();
+  	});
+  	$("#password").focus(function(){
+  		$("#mention3").css("display", "none");
+  		$("#mention4").css("display", "none");
+      judge();
+  	});
+	
+	$("#lili").blur(function(){
+		$.post("{:url('Index/Auth/confirmCode')}", {codeNum:$("#lili").val()},function($data){
+			if($data == 1) {
+				$("#lili2").css("display", "block");
+			}
+      judge();
+		}, 'json');
+	});
+  $("#lili").focus(function(){
+    $("#lili2").css("display", "none");
+  })
+  </script> 
+</body>
+</html>

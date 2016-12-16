@@ -1,0 +1,2 @@
+/*from tccdn minify at 2016-12-2 13:28:33,file：/cn/s/c/2015/toNewSrc.1.0.js*/
+function toNewSrc(e,c){var b,f,a;if(c){f=c.split("_")[0];a=c.split("_")[1]}if(e.indexOf("http://pic3.40017.cn/")===0){var d=e.slice(e.length-4,e.length);if(c){b=e.slice(0,e.length-4)+"_"+f+"x"+a+"_00"+e.slice(e.length-4,e.length)}else{b=e}}else{if(e.indexOf("http://upload.17u.com/")===0){b=e}else{if(e.indexOf("http://")===0){b=e}else{if(c){b="http://upload.17u.com/uploadfile/scenerypic_common/"+f+"_"+a+"/"+e}else{b="http://upload.17u.com/uploadfile/"+e}}}}return b};

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!-- Website template form http://www.cssmoban.com/ -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fineminds Marketing Solutions Website Template</title>
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="__STATIC__/css/style2.css" type="text/css">
+</head>
+<body>
+	<div class="border">
+		<div class="page">
+			<div class="sidebar">
+				<a href="__STATIC__/index.html" id="logo"><img src="{$Think.session.icon}" alt="logo" width="229px" height="135px"></a>
+				<ul>
+					<li class="selected" id="u1">
+						<a href="javascript:;">修改头像</a>
+					</li>
+					<li id="u2">
+						<a href="javascript:;">个人资料</a>
+					</li>
+					<li id="u3">
+						<a href="/index/index/person">我的订单</a>
+					</li>
+					<li id="u4">
+						<a href="/index/index/take">我的评价</a>
+					</li>
+					<li id="u5">
+						<a href="javascript:;">我的购物车</a>
+					</li>
+				</ul>
+			
+			</div>
+			<div class="body" id="body">
+				<div id="body1" style="display:none;">
+					<h2>定义你的专属头像</h2>
+					<div>
+						<img src="{$Think.session.icon}" height="150px" width="150px;">
+					</div>
+					<div style="margin-top:10px;">
+					<form action="/index/index/upload"	enctype="multipart/form-data"	method="post">
+						<div><input	type="file"	name="image"/></div>		
+						<div style="margin-top:10px;"><input type="submit" value="上传"/></div>	
+					</form>	
+						<p>
+							This website template has been collect from Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us.
+						</p>
+						<ul>
+							<li id="link1">
+								<a href="__STATIC__/services.html"><span>Design</span></a>
+							</li>
+							<li id="link2">
+								<a href="__STATIC__/services.html"><span>Seo</span></a>
+							</li>
+							<li id="link3">
+								<a href="__STATIC__/services.html"><span>Copywriting</span></a>
+							</li>
+						</ul>
+					</div>
+				
+				</div>
+				
+				<div id="body2" style="display: none;">
+					<div id="body22" >
+						<h2>修改个人资料</h2>
+						<div style="font-size:20px;margin-top:10px;">
+							<div>&nbsp;用户名: <span><input type="text" name="username" value="{$Think.session.username}" id="username"></span></div>
+						</div>
+						<div style="font-size:20px;margin-top:10px;">                                                                                             
+							<div>&nbsp;旧密码: <span><input type="password" name="oldpassword" placeholder="请输入原密码" id="oldpassword"></span></div>
+						</div>                                                                                           
+						<div style="font-size:20px;margin-top:10px;">                                                                                            
+							<div>&nbsp;新密码: <span><input type="password" name="newpassword" placeholder="请输入新密码" id="newpassword"></span></div>
+						</div>
+						<div style="font-size:20px;margin-top:10px;">                                                                                            
+							<div>确认密码: <span><input type="password" name="confirmpassword" placeholder="确认新密码" id="confirmpassword"></span></div>
+						</div>
+						<div style="font-size:20px;margin-top:10px;">                                                                                           
+							<div>&nbsp;&nbsp;邮箱: <span><input type="text" name="email" value="{$Think.session.username}" id="email"></span></div> 
+						</div>
+						<div style="font-size:20px;margin-top:10px;">
+							<div>个性签名: <span><input type="text" name="username" value="{$Think.session.username}" id="userna"></span></div>
+						</div>
+						<div style="font-size:20px;margin-top:10px;margin-left:100px;">                                                                                           
+							<button style="margin-left:60px;width:80px;" id="submit">&nbsp;&nbsp;提交</button> 
+						</div>
+						<div style="width:260px;height:200px;background:red;position:absolute;top:93px;right:263px;z-index:100;display:none;text-align: center;line-height: 200px;" id="warn"></div>
+					</div>
+					<script type="text/javascript">
+						$("#username").blur(function(){
+							if ($("#username").val().length == 0) {
+								$("#warn").css("display","block").text('用户名不能为空');
+							}
+						});
+						
+						$("#oldpassword").blur(function(){
+  							$.post("/index/auth/checkpassword", {password : $("#oldpassword").val()},function(data){
+  									if (data == '密码不正确'){
+  										$("#warn").css("display","block").text('密码输入不正确');
+  									}
+  							}, 'json');
+  							
+  						});
+  						$("#newpassword").blur(function(){
+  							var x=document.getElementById("newpassword").value.length;
+  							if(x <= 5) {
+  								$("#warn").css("display","block").text('密码不能少于6位');
+  							}
+  						});
+  						$("#confirmpassword").blur(function(){
+  							if ($("#confirmpassword").val() != $("#newpassword").val()) {
+  								$("#warn").css("display","block").text('两次密码输入不一致');
+  							}
+  						});
+
+  						$("#warn").click(function(){
+  							$("#warn").css("display","none");
+  						});
+  						
+  						$("#userna").blur(function(){
+  							
+  							b = $("#userna").val().length;
+  							if (b > 15){
+  								$("#warn").css("display","block").text('签名不能多于14位');
+  							}
+  						});
+
+  						$("#submit").click(function(){
+  							$("#warn").css("display","block").text('正在处理请稍候');
+  							$.post('/index/index/personUpdate',{username : $("#username").val(), oldpassword : $("#oldpassword").val(), newpassword : $("#newpassword").val(), confirmpassword : $("#confirmpassword").val(), signature : $("#userna").val(), email : $("#email").val()},
+  								function(data){
+  									if (data == '更新成功'){
+  										$("#warn").css("display","block").text('更新成功');
+  										setTimeout($("#warn").css("display", "none"), 1000);
+  									} else {
+  										$("#warn").css("display","block").text(data);
+  									}
+  									}, 'json');
+
+  						});
+
+					</script>
+					<div style="margin-top:10px;">
+						<p>
+							This website template has been collect from Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us.
+						</p>
+						<ul>
+							<li id="link1">
+								<a href="__STATIC__/services.html"><span>Design</span></a>
+							</li>
+							<li id="link2">
+								<a href="__STATIC__/services.html"><span>Seo</span></a>
+							</li>
+							<li id="link3">
+								<a href="__STATIC__/services.html"><span>Copywriting</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			<div id="body3">
+			{notempty name="arecord"}
+						<div style="background:gold;border:none;font-size:20px;position:fixed;top:60px;right:136px;">
+							我的购物清单
+						</div>
+				{notempty name="sim"}		
+					{foreach	name="sim"	item ="vo"}	
+							
+						<div style="display:block;overflow:hidden;margin-top:20px;padding-top:5px;position:relative;" id="c_{$key}c_{$key}" > 
+							<div style="border:1px dashed #7f8ee5;width：665px;">
+							<div stlye="display:block;overflow:hidden;">
+								<div style="float:left;font-size:12px;">
+									商品类型: &ensp;{$vo.cate}
+								</div>
+							</div>
+							<div style="float:left;margin-left:40px;margin-top:10px;width:150px;height:150px;">
+								<img src="{$vo.picture}" height="150px" weight="150px;">
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									商品名称:&ensp;{$vo.spot}
+								</div>
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									信息描述:&ensp;{$vo.about}
+								</div>
+							</div>
+							<div style="display:block;overflow: hidden;">
+								<div style="float:left; margin-left:25px;font-size:14px;margin-top:20px;">				消费数量:&ensp;{$vo.num}
+								</div>
+								<div style="float:left;font-size:14px;margin-top:20px;">
+									花费:&ensp;{$vo.money}
+								</div>
+								<span style="margin-left:70px;font-size:12px;line-height:36px;">
+									<a style="margin-top:20px;" href="/index/index/people?cate={$vo.cate}&id={$vo.id}&money={$vo.money}&num={$vo.num}&date={$vo.date}">评价订单
+									</a>	
+								</span>
+							</div>
+							<div style="display:block;overflow:hidden;margin-top:20px;font-size:12px;">
+								<div style="float:left;margin-left:30px;">付款日期:&ensp;{$vo.date}</div>
+								<div style="float:left;margin-left:30px;">
+									<a id="de{$key}de{$key}" href="javascript:;">移除</a>
+								</div>
+							</div>
+							</div>
+
+						</div>
+						<script type="text/javascript">
+							$("#de{$key}de{$key}").click(function(){
+								$("#c_{$key}c_{$key}").remove();
+
+							});
+						</script>
+				{/foreach}
+			{/notempty}
+
+			{notempty name="doub"}		
+					
+						<div style="display:block;overflow:hidden;margin-top:20px;border:1px dashed #7f8ee5;">
+				{foreach	name="doub"	item = "vo"}	
+					{foreach name="vo" item="val"}
+						<div style="margin-top:5px;"> 
+							<div stlye="display:block;overflow:hidden;">
+								<div style="float:left;font-size:12px;">
+									商品类型: &ensp;{$val.cate}
+								</div>
+							</div>
+							<div style="float:left;margin-left:40px;margin-top:10px;width:150px;height:150px;">
+								<img src="{$val.picture}" height="150px" weight="150px;">
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									商品名称:&ensp;{$val.spot}
+								</div>
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									信息描述:&ensp;{$val.about}
+								</div>
+							</div>
+							<div style="display:block;overflow: hidden;">
+								<div style="float:left; margin-left:25px;font-size:14px;margin-top:20px;">				商品总数:&ensp;{$val.num}
+								</div>
+								<div style="float:left;font-size:14px;margin-top:20px;">
+									花费:&ensp;{$val.money}
+								</div>
+								<span style="margin-left:70px;font-size:12px;line-height:36px;">
+									<a style="margin-top:20px;" href="/index/index/people/?cate={$val.cate}&id={$val.id}&money={$val.money}&num={$val.num}&date={$val.date}">
+										评价订单
+									</a>		 
+								</span>
+							</div>
+							<div style="display:block;overflow:hidden;margin-top:20px;font-size:12px;">
+								<div style="float:left;margin-left:205px;">
+									<a id="de{$key}" href="javascript:;">移除</a>
+								</div>
+								
+							</div>
+						</div>
+							<script type="text/javascript">
+									$("#de{$key}").click(function(){
+									$("#c_{$key}").remove();
+
+									});
+							</script>
+						{/foreach}
+				{/foreach}
+							<div style="display:block;overflow:hidden;margin-top:20px;font-size:12px;">
+								<div style="float:left;margin-left:240px;">付款日期:&ensp;{$val.date}</div>
+								
+							</div>
+						</div>			
+			{/notempty}
+			{/notempty}
+			</div>
+
+				<div id="body5" style="display:none;">
+					<form method="post" action="/index/pay/pay" >
+						<div style="position:fixed;top:60px;right:130px;">
+							<input type="submit" value="合并付款" style="background:gold;border:none;font-size:23px;">
+						</div>
+						<div style="position:fixed;top:60px;right:90px;">
+							<a style="background:gold;border:none;font-size:15px;" href="javascript:;" id="all">
+								<font color="black">全选</font>
+							</a>
+						</div>
+						<div style="position:fixed;top:60px;right:50px;">
+							<a style="background:gold;border:none;font-size:15px;" href="javascript:;" id="allnot">
+								<font color="black">反选</font>
+							</a>
+						</div>
+					{foreach  name="array" item="vo"}
+						<div style="display:block;overflow:hidden;margin-top:20px;" id="cd_{$key}">
+							<div stlye="display:block;overflow:hidden;">
+								<div style="float:left;font-size:12px;">
+									商品类型: &ensp;{$vo.0}
+								</div>
+							</div>
+							<div style="float:left;margin-left:40px;margin-top:10px;width:150px;height:150px;">
+								<img src="{$vo.3}" height="150px" weight="150px;">
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									商品名称:&ensp;{$vo.2}
+								</div>
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									信息描述:&ensp;{$vo.4}
+								</div>
+							</div>
+							<div style="display:block;overflow: hidden;">
+								<div style="float:left; margin-left:25px;font-size:14px;margin-top:20px;">				商品总数:&ensp;{$vo.6}
+								</div>
+								<div style="float:left;font-size:14px;margin-top:20px;">
+									商品剩余:&ensp;{$vo.7}
+								</div>
+								<span style="margin-left:70px;font-size:12px;line-height:36px;">
+									勾选购买:<input type="checkbox" name="info[]"
+									value="{$vo.0}.{$vo.2}" style="margin-top:20px;">
+								</span>
+							</div>
+							<div style="display:block;overflow:hidden;margin-top:20px;font-size:12px;">
+								<div style="float:left;margin-left:30px;">添加日期:&ensp;{$vo.5}</div>
+								<div style="float:left;margin-left:30px;">
+									<a id="dell{$vo.1}{$key}" href="javascript:;">移除</a>
+								</div>
+								<div style="float:left;margin-left:30px;"><a href="/index/pay/pay?cate={$vo.0}&name={$vo.2}">立即购买</a></div>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$("#dell{$vo.1}{$key}").click(function(){
+								$("#cd_{$key}").remove();
+
+							});
+						</script>
+					{/foreach}
+					</form>
+			<script type="text/javascript">
+				$("#all").click(function(){
+					$("input[type='checkbox']").prop("checked", true);
+				});
+				$("#allnot").click(function(){
+					$("input[type='checkbox']").prop("checked", false);
+				});
+			</script>
+	
+		</div>
+
+	</div>	
+	<script>
+		$("#u1").click(function(){
+			$("#body > div").css("display", "none");
+			$("#body1").css("display", "block");
+		});
+		$("#u2").click(function(){
+			$("#body > div").css("display", "none");
+			$("#body2").css("display", "block");
+		});
+		$("#u5").click(function(){
+			$("#body > div").css("display", "none");
+			$("#body5").css("display", "block");
+		});
+		
+	</script>
+</div>	
+</div>	
+			
+		
+	
+</body>
+</html>

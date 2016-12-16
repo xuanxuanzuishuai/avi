@@ -1,0 +1,295 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>首页 - 游 - 网页模板素材</title>
+ <link href="__STATIC__/css/tts_confirm_alpha@37a361fcff327ec1ca2275153556c825_14.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="__STATIC__/css/style1.css"/>
+<script type="text/javascript" src="__STATIC__/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/jquery.scrollfollow.js"></script>
+<script type="text/javascript" src="__STATIC__/js/flash.js"></script>
+<script type="text/javascript" src="__STATIC__/js/int.js"></script>
+<style>
+         .q_header_main{
+            height:36px;
+            background-color:#f5f5f5;
+        }
+        .q_header_mini_nav{
+            position:absolute;
+            top:5px;
+            left:270px;
+        }
+        .q_header_username{
+            position:absolute;
+            top:5px;
+            right:320px;
+        }
+        .q_header_register{
+            position:absolute;
+            top:5px;
+            right:220px;
+        }
+        .q_header_tnav_omenu_link{
+            position:absolute;
+            top:5px;
+            right:260px;
+        }
+    </style>
+</head>
+<body>
+<div class="q_header_main" data-hfchannel="package" data-hffile="header_main_mini">
+            <div class="q_header_tnav">
+                <ul>
+                 {empty name="$Think.session.username"}
+                    <li  class="q_header_username" style="margin-right:30px;"><a href="{:url('index/auth/login')}">立即登录</a></li>
+                    <li class="q_header_register"><a href="{:url('Index/Auth/register')}">立即注册</a></li>
+                    {/empty}
+                    {notempty name="$Think.session.username"}
+                    <li class="q_header_username">你好 &nbsp;<font color="red">{$Think.session.username}</font></li>
+                    <li class="q_header_register"><a href="{:url('index/Auth/logout')}">退出</a></li>
+                    {/notempty}
+                    <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link">{notempty name="$Think.session.username"}我的悦心{/notempty}</a></dt>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="q_header_mini_nav"> <a href="" class="q_header_mini_link">欢迎来到悦心网</a>
+            </div>
+   </div>
+    <div class="order_hd2 ctrip container" style="background-color:#2c87b5;">
+        <div class="header_main cf">
+            <a href="__STATIC__/https://ttsu3.package.qunar.com/supplier_shop.jsp" class="dl_name">
+                            <div style="margin-top:15px;margin-left:50px;">舒心之旅</div>
+                    </a>
+            <div class="phongbox">
+                <p class="phonenum" style="margin-top:13px;">18034233472
+                </p>
+                <p class="weekday" stlye="margin-top:5px;">周一-周日 : 00:00 - 24:00</p>
+            </div>
+            <i class="phoneico" style="margin-top:16px;"></i>
+        </div>
+    </div>
+<div id="nav">
+	<ul>
+		<li><a href="/index.aspx" class="a1">首页</a></li>
+		<li><a href="/eat" class="a2">吃</a></li>
+		<li><a href="/live" class="a3">住</a></li>
+		<li><a href="/traffic" class="a4">行</a></li>
+		<li><a href="/index/index/tour" class="a5">游</a></li>
+		<li><a href="/shop" class="a6">购</a></li>
+		<li><a href="/play" class="a7">娱</a></li>
+	</ul>
+</div> 
+<script type="text/javascript">
+function select_search_type(n){
+	document.getElementById('search_type1').className='';
+	document.getElementById('search_type2').className='';
+	document.getElementById('search_type3').className='';
+	document.getElementById('search_type'+n).className='current';
+	document.getElementById('search_type').value=n;
+}
+</script><div id="main">
+	<div id="cate">
+		<a class="prev"></a>
+		<div class="scroll">
+			<ul>
+				<li>
+					<strong>美食</strong>
+					<a href="/eat/feature.aspx">特色美食</a>|<a href="/eat/foodshops.aspx">名菜馆</a>|<a href="/eat/culture.aspx">美食文化</a><br />
+					<!--<a href="#">美食地图</a>|--><a href="#">美食达人</a>
+				</li>
+				<li>
+					<strong>住宿</strong>
+					<a href="/live/hotel_list.aspx?hotel_type=1">星级酒店</a>|<a href="/live/hotel_list.aspx?hotel_type=2">经济宾馆</a>|<a href="/live/hotel_list.aspx?hotel_type=4">农家乐</a><br />
+					<a href="http://shop.xingwentour.gov.cn/Live/" target="_blank" class="blue">酒店预订</a>
+				</li>
+				<li>
+					<strong>旅游</strong>
+					<a href="/tour/scenic.aspx">旅游景点</a>|<a href="/tour/line.aspx">精品路线</a>|<a href="/tour/rural.aspx">乡村旅游</a><br />
+					<a href="/tour/guides.aspx">导游介绍</a>|<a href="//diy" class="blue">线路定制</a>|<a href="tour/travel_agency.aspx">旅行社</a>
+				</li>				
+				<li>
+					<strong>购物</strong>
+					<a href="/shop/specialty.aspx">特产名物</a>|<a href="/shop/shopplace.aspx">购物场所</a>|<a href="/shop/article_list.aspx?cid=16">购物达人</a><br />
+					<a href="/shop/article_list.aspx?cid=11">优惠活动</a>|<a href=" http://shop.xingwentour.gov.cn/" class="red b">旅游商城</a>
+				</li>
+				<li>
+					<strong>娱乐</strong>
+					<a href="/play/match.aspx?type=2" class="b">旅游节庆</a>|<a href="/play/match.aspx?type=1">民族特色演出</a><br />
+					<a href="/play/match.aspx?type=3">体育赛事</a>|<a href="/play/playplace.aspx">娱乐场所</a>
+				</li>
+				<li>
+					<strong>服务</strong>
+					<a href="/service/info.aspx">旅游概况</a>|<a href="/service/article.aspx">旅游资讯</a>|<a href="#">游客咨询</a><br />
+					<a href="/service/interaction.aspx">旅游互动</a>|<a href="/service/toolinfo.aspx">旅行工具箱</a>
+				</li>
+			</ul>			
+		</div>		
+		<a class="next"></a>
+	</div>	<div id="page">
+		<div class="pageLeft">
+			<h2 class="t4">游</h2>
+			<div class="subNav">
+				<div>
+					<ul>
+						<li id="city" id="city"><a href="scenic.aspx" >目标城市</a></li>
+						<div id="place" style="width:300px;height:240px;background-color:#d5f2fc;position:absolute;top:120px;left:200px;z-index:10000;display:none;overflow:hidden;padding:0;">
+								{foreach $sites as $value}
+									<a href="/index/index/judge?name={$value.site}"><div style="width:40px;height:30px;line-height:30px;text-align:center;float:left;">{$value.site}</div></a>
+								{/foreach}
+						</div>
+						<script>
+							function vari(a,b)
+							{
+								var oDiv1 = document.getElementById(a);
+								var oDiv2 = document.getElementById(b);	
+								var timer = null;
+								oDiv1.onmouseover = oDiv2.onmouseover = over;
+								oDiv1.onmouseout = oDiv2.onmouseout = out;
+								function over()
+								{
+									clearTimeout(timer);
+									timer = setTimeout(function(){
+										oDiv2.style.display = 'block';	
+									},100);
+								}
+								function out()
+								{
+									clearTimeout(timer);
+									timer = setTimeout(function(){
+										oDiv2.style.display = 'none';	
+									},100);
+								}
+							}	
+							vari('city','place');	
+						</script>
+						<li><a href="line.aspx" id="route">精品线路</a></li>
+						<div id="line" style="width:300px;height:240px;background-color:#d5f2fc;position:absolute;top:120px;left:200px;z-index:10000;display:none;overflow:hidden;padding:0;">
+								{foreach $goods as $value}
+									<a href="/index/index/judge?name={$value.good}"><div style="width:72px;height:30px;line-height:30px;text-align:center;float:left;">{$value.good}</div></a>
+								{/foreach}
+						</div>
+						<script>
+							vari('route', 'line');
+						</script>
+						<li><a href="rural.aspx" >乡村旅游</a></li>
+						<li><a href="travel_agency.aspx" >旅行社</a></li>
+						<li><a href="guides.aspx" >导游介绍</a></li>
+					</ul>
+					<form action="/search.aspx" method="get"><p><input type="text" name="q" onfocus="if(this.value=='全文搜索关键字'){this.value='';}" value="全文搜索关键字" /><input name="search_type" type="hidden" value="3" /><button type="submit">搜</button><a href="#">高级</a></p></form>				</div>			
+			</div>
+			<div class="cust">
+				<p><a href="/diy/" target="_blank">定制我的线路</a></p>
+			</div>
+			<div class="links">
+				<h3>旅游小贴士</h3>
+
+				<ul>
+					<li><a href="http://shop.xingwentour.gov.cn/Travel/" target="_blank" class="a1">门票预订</a></li>
+					<li><a href="http://shop.xingwentour.gov.cn/Live/" target="_blank" class="a2">酒店预订</a></li>
+					<li><a href="http://www.weather.com.cn/weather/101271110.shtml" target="_blank" class="a3">天气预报</a></li>
+					<li><a href="/service/knowledge_list.aspx" target="_blank" class="a4">出游常识</a></li>
+					<li><a href="/service/faq.aspx" target="_blank" class="a5">常见问题</a></li>
+					<li><a href="/service/yellowpage.aspx" target="_blank" class="a6">常用电话</a></li>
+					<li><a href="http://www.12306.cn/mormhweb/" target="_blank" class="a7">列车查询</a></li>
+					<li><a href="http://flight.qunar.com/status/alphlet_order.jsp" target="_blank" class="a8">航班查询</a></li>
+				</ul>
+			</div>			<div class="ad">
+				<a href="#"><img src="__STATIC__/images/ad1.jpg" /></a>
+			</div>
+		</div>		<div class="pageRight">
+			<div class="youMain">
+				<script type="text/javascript" src="../js/jquery.cycle.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('.youMain .itemA .pic').cycle({
+  	 	fx:      'scrollUp', 
+    	speed:    500,
+        timeout: 5000,
+        pager:  '.youMain .itemA .title',
+        pagerAnchorBuilder: function(idx, slide) {
+            return '.youMain .itemA .title li:eq(' + (idx) + ') a';
+        }
+    });	
+});
+</script>
+				
+				<div class="itemA">
+					<ul class="title">
+                    							<li><a href="" target="_blank">神奇兴文，发现之旅！</a></li>	
+                        						<li><a href="" target="_blank">天下奇观—兴文石海</a></li>	
+                        						<li><a href="" target="_blank">五一大假 喜迎八方游客</a></li>	
+                        	
+					</ul>
+					<ul class="pic">
+                   		 						<li><a href="" target="_blank"><img src="__STATIC__/images/flashfocus20.jpg" /></a></li>	
+                        						<li><a href="" target="_blank"><img src="__STATIC__/images/flashfocus21.jpg" /></a></li>	
+                        						<li><a href="" target="_blank"><img src="__STATIC__/images/flashfocus22.jpg" /></a></li>	
+                        	
+					</ul>
+				</div>	
+				<div class="itemB">
+                					<div>
+						<a href="scenic_detail.aspx?sid=2" target="_blank"><img src="__STATIC__/images/1334285460105140585.jpg" /></a>
+						<dl>
+                        								<dd><a target="_blank" href="attractions_detail.aspx?aid=9">寿山湖</a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=10">飞雾洞</a></dd>
+                            						</dl>
+						<ul>
+														<li><a target="_blank" href="line_detail.aspx?lid=3">西部大峡谷温泉、兴文石海三日游</a></li>
+                            							<li><a target="_blank" href="line_detail.aspx?lid=2">蜀南竹海、兴文石海二日游</a></li>
+                            							<li><strong>咨询电话：0831—2323293</strong></li>
+						</ul>
+						<p><a href="scenic_detail.aspx?sid=2" target="_blank">僰王山景区</a></p>
+					</div>
+                    					<div>
+						<a href="scenic_detail.aspx?sid=1" target="_blank"><img src="__STATIC__/images/133428364056436111.jpg" /></a>
+						<dl>
+                        								<dd><a target="_blank" href="attractions_detail.aspx?aid=1">天下第一石虎</a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=2">石海涌浪 </a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=3">石海苗寨</a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=4">七女峰</a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=5">天涯望归人</a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=6">石林叠翠</a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=7">夫妻峰</a></dd>
+                            							<dd><a target="_blank" href="attractions_detail.aspx?aid=8">大漏斗</a></dd>
+                            						</dl>
+						<ul>
+														<li><a target="_blank" href="line_detail.aspx?lid=2">蜀南竹海、兴文石海二日游</a></li>
+                            							<li><a target="_blank" href="line_detail.aspx?lid=1">兴文石海一日游</a></li>
+                            							<li><strong>咨询电话：0831—2323293</strong></li>
+						</ul>
+						<p><a href="scenic_detail.aspx?sid=1" target="_blank">兴文石海景区</a></p>
+					</div>
+				</div>
+				<div class="itemC">
+					<img src="__STATIC__/images/you4.jpg" />
+				</div>
+				<div class="itemE">
+					<img src="__STATIC__/images/you5.jpg" />
+				</div>
+			</div>	
+		</div>
+		<div class="clearit"></div>	
+	</div>
+		<div id="footer">
+		<div class="nav">
+			<ul>
+            					<li><a href="/service/info_view.aspx?aid=5" target="_blank">关于我们</a></li>
+                				<li><a href="/service/info_view.aspx?aid=6" target="_blank">广告服务</a></li>
+                				<li><a href="/service/info_view.aspx?aid=7" target="_blank">联系方式</a></li>
+                				<li><a href="/service/info_view.aspx?aid=8" target="_blank">网站声明</a></li>
+                				<li><a href="/service/info_view.aspx?aid=9" target="_blank">诚聘英才</a></li>
+                				<li><a href="/service/info_view.aspx?aid=10" target="_blank">合作伙伴</a></li>
+                				<li><a href="#">返回顶部</a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<div class="l">
+				&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+
+</body>
+</html>

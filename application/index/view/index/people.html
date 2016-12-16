@@ -1,0 +1,116 @@
+
+ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="__STATIC__/css/tts_confirm_alpha@37a361fcff327ec1ca2275153556c825_14.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/css/popup_14.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.3.min.js"></script>
+    <script type='text/javascript' src='__STATIC__/js/ckeditor/ckeditor.js'></script>
+    <style type="text/css">
+    .contract_title {
+        border-bottom: 1px dashed #ddd;
+        color: #218fd5;
+        height: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <link data-hfstamp="20161208184117" id="hf-style" data-hffile="header_mini_styles" rel="stylesheet" href="__STATIC__/css/header_main_mini@16f266800ab426279b35fe22dbc8a8e1_14.css">
+    <div class="q_header q_header_package q_header_package_mini">
+        <div class="q_header_main" data-hfchannel="package" data-hffile="header_main_mini">
+            <div class="q_header_logo">
+                <a href="__STATIC__/http://www.qunar.com/" target="_top" title="悦心网首页" hidefocus="on"></a>
+            </div>
+            <div class="q_header_tnav">
+                <ul>
+                {empty name="$Think.session.username"}
+                    <li id="__loginInfo_u__" class="q_header_username"><a href="{:url('index/auth/login')}" hidefocus="on" rel="nofollow">登录</a></li>
+                    <li id="__loginInfo_r__" class="q_header_register"><a href="{:url('index/auth/register')}" hidefocus="on" rel="nofollow">注册</a></li>
+                     <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link"><span class="q_header_tnav_omenu_title" id="__orderInfo_t__"><b>我的悦心</b></span></a></dt>
+                        </dl>
+                    </li>
+                    {/empty}
+                 {notempty name="$Think.session.username"}
+                     <li id="__loginInfo_u__" class="q_header_username"> 你好: </li>
+                        <li id="__loginInfo_r__" class="q_header_register">{$Think.session.username}</li>
+                  
+                    <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link"><span class="q_header_tnav_omenu_title" id="__orderInfo_t__"><a href="/index/auth/logout">退出</a></span></a></dt>
+                        </dl>
+                    </li>
+                    <li class="q_header_tnav_omenu" id="__orderInfo_l__">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link"><span class="q_header_tnav_omenu_title" id="__orderInfo_t__"><a href="/index/auth/logout">我的悦心</a></span></a></dt>
+                        </dl>
+                    </li>
+                      {/notempty}
+                </ul>
+            </div>
+            <div class="q_header_mini_nav"> <a href="__STATIC__/http://www.qunar.com/" class="q_header_mini_link" title="悦心网首页">欢迎来到悦心网</a>
+            </div>
+        </div>
+    </div>
+    <div class="order_hd2 ctrip ">
+        <div class="header_main cf">
+            <a href="__STATIC__/https://ttsu3.package.qunar.com/supplier_shop.jsp" class="dl_name">
+                            舒心之旅
+                    </a>
+            <div class="phongbox">
+                <p class="phonenum">18034233472
+                </p>
+                <p class="weekday">周一-周日 : 00:00 - 24:00</p>
+            </div>
+            <i class="phoneico"></i>
+        </div>
+    </div>
+    <div style="display:block;overflow:hidden;margin-top:20px;width:665px;margin-left:150px;"> 
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;font-size:12px;">
+									商品类型: &ensp;{$cate}
+								</div>
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:10px;width:150px;height:150px;">
+									<img src="{$picture}" height="150px" weight="150px;">
+								</div>
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									商品名称:&ensp;{$spot}
+								</div>
+							</div>
+							<div style="display:block;overflow:hidden;">
+								<div style="float:left;margin-top:20px;font-size:14px;">
+									信息描述:&ensp;{$about}
+								</div>
+							</div>
+							<div style="display:block;overflow: hidden;">
+								<div style="float:left;font-size:14px;margin-top:20px;">				消费数量:&ensp;{$num}
+								</div>
+								<div style="float:left;font-size:14px;margin-top:20px;">
+									&nbsp;花费:&ensp;{$money}
+								</div>
+							</div>
+							<div style="display:block;overflow:hidden;margin-top:20px;font-size:12px;">
+								<div style="float:left;">付款日期:&ensp;{$date}</div>	
+							</div>
+
+				</div>
+		<div style="position:absolute;top:180px;right:270px;">
+			<form action="/index/index/doPeo?cate={$cate}&id={$id}" method="post">
+					<textarea name="content" style="width:400px;height:200px;"></textarea>
+					<div style="position:relative;top:30px;left:70px;">
+						<input type="submit" value="提交评论" style="width:80px;height:40px;border:none;background-color: #fdc9ba;color:black;">
+					</div>
+			</form>
+
+		</div>
+	
+    </body>
+    </html>

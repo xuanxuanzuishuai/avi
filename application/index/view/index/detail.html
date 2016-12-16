@@ -1,0 +1,398 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.ly.com/scenery/scenerydetail_21347.html?refid=18024458">
+    <meta name="applicable-device" content="pc">
+    <script type="text/javascript">
+    var _tcopentime = new Date().getTime();
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c6a93e2a75a5b1ef9fb5d4553a2226e5";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.3.min.js"></script>
+     <script type="text/javascript" src="__STATIC__/js/jquery-1.3.2.min.js"></script>
+     <link href="__STATIC__/css/tts_confirm_alpha@37a361fcff327ec1ca2275153556c825_14.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="__STATIC__/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/common.0.1.2_2.css" media="screen" />
+    <script type="text/javascript" src="__STATIC__/js/64b0fbbf8c464eb2818f7d55018f9249.js"></script>
+    <!--cnwidescreenjscss.leonid.end-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/1976f721896d48bf9226be6757abdaf2.css" media="screen" />
+    <script type="text/javascript" type="text/javascript" src="__STATIC__/js/c49e6f780c9f40188628c2a816985b28.js"></script>
+    <link href="css/5f820a40162c43d38c35fd099eabf65c.css" rel="__STATIC__/stylesheet" type="text/css" />
+    <link href="css/42f5e1c2fb6e4ce08d7ea0e08b6d4654.css" rel="__STATIC__/stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/js/8f211f98a69246e6956f1defc2415a35.js"></script>
+  <style>
+          .q_header_main{
+            height:36px;
+            background-color:#f5f5f5;
+        }
+        .q_header_mini_nav{
+            position:absolute;
+            top:5px;
+            left:270px;
+        }
+        .q_header_username{
+            position:absolute;
+            top:5px;
+            right:320px;
+        }
+        .q_header_register{
+            position:absolute;
+            top:5px;
+            right:220px;
+        }
+        .q_header_tnav_omenu_link{
+            position:absolute;
+            top:6px;
+            right:260px;
+        }
+        a:link{
+            color:black;
+        };
+        a:visited{
+            color:black;
+        }
+        a:hover{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+  <div id="drivers" style="position:fixed;top:22px;right:0px;display: none;"><img src="__STATIC__/images/gouwuche.jpg" height="60px" width="70px"></div>
+    <div id="number" style="width:20px;height:30px;background-color: red;position:fixed;top:19px;right:31px;text-align:center;line-height: 30px;display:none;"></div>
+ <div class="q_header_main" data-hfchannel="package" data-hffile="header_main_mini">
+            <div class="q_header_tnav">
+                <ul>
+                 {empty name="$Think.session.username"}
+                    <li  class="q_header_username" style="margin-right:30px;"><a href="{:url('index/auth/login')}">立即登录</a></li>
+                    <li class="q_header_register"><a href="{:url('Index/Auth/register')}">立即注册</a></li>
+                    {/empty}
+                    {notempty name="$Think.session.username"}
+                    <li class="q_header_username">你好 &nbsp;<font color="red">{$Think.session.username}</font></li>
+                    <li class="q_header_register"><a href="{:url('index/Auth/logout')}">退出</a></li>
+                    {/notempty}
+                    <li class="q_header_tnav_omenu" id="myyuexin">
+                        <dl>
+                            <dt><a href="" class="q_header_tnav_omenu_link">{notempty name="$Think.session.username"}我的悦心{/notempty}</a></dt>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="q_header_mini_nav"> <a href="" class="q_header_mini_link">欢迎来到悦心网</a>
+            </div>
+   </div>
+   <div id="myoption" style="display:none;text-align: center;">
+       <div style="position:absolute;top:26px;right:290px;width:150px;height:200px;z-index:10;"><img src="{$Think.session.icon}" width="150px"></div>
+       <div style="width:150px;height:200px;position:absolute;top:26px;right:140px;background:gray;">
+           <div style="line-height: 30px;font-size:12px;margin-top:5px;"><a href="/index/index/person" style="background:gray;border:none;"><font color="black">我的个人资料</font></a></div>
+           <div style="line-height: 30px;font-size:12px;margin-top:5px;"><button style="background:gray;border:none;">我的购物车</button></div>
+           <div style="line-height: 30px;font-size:12px;margin-top:5px;">个性签名</div>
+           <div style="color:#00e8bf;">{$Think.session.signature}</div>
+       </div>
+   </div>
+   <script type="text/javascript">
+       $("#myyuexin").mouseover(function(){
+        $("#myyuexin").css({"background":"green","font-weight" : "bold"});
+        $("#myoption").css("display", "block");
+       });
+
+       $("#myoption").mouseleave(function(){
+         $("#myoption").css("display", "none");
+       })
+      
+   </script>
+   <div class="">
+    <div class="order_hd2 ctrip container">
+        <div class="header_main cf">
+            <a href="__STATIC__/https://ttsu3.package.qunar.com/supplier_shop.jsp" class="dl_name">
+                            <div style="margin-top:15px;margin-left:50px;">舒心之旅</div>
+                    </a>
+            <div class="phongbox">
+                <p class="phonenum" style="margin-top:13px;">18034233472
+                </p>
+                <p class="weekday" stlye="margin-top:5px;">周一-周日 : 00:00 - 24:00</p>
+            </div>
+            <i class="phoneico" style="margin-top:16px;"></i>
+        </div>
+    </div>
+    <div class="content" id="content">
+        <div class="info_box_w clearfix container" style="background-color:#f6f6f6">
+            <!--图片 start-->
+            <!-- 模板ID 57c39744eb710abdd9732e00 -->
+            <div class="info_l row">
+                <div class="img_w" id="deImg"> <img nsrc="{$picture}" alt="{$name}门票"> </div>
+                <div class="img_slider clearfix">
+                    <div class="img_s_ul">
+                        <ul id="deImgs">
+							{for start="0" end="$num"}
+								<li pic_num="{$i+1}" class="img_s_w"> <img bigsrc="{$pictures[$i]}" nsrc="{$pictures[$i]}" alt="{$name}门票"> </li>
+							{/for}
+                          
+                            <div><a href="/index/index/hoteljudge?name={$name}"><li class="last" style="background:#ffd168;"><span><font color="red"><b>附近酒店</b></font><i></i></span></li></a></div>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <script type="text/javascript">
+                $("#deImgs > li").mouseover(function(){
+                 
+                    $("#deImg").html($(this).html());
+                });
+
+               $("#deImgs").mouseleave(function(){
+                    $("#deImg").html('<img src="{$picture}" alt="{$name}门票">');
+               })
+            </script>
+            <!--图片 end-->
+            <!--价格、点评、促销信息 start-->
+            <!-- 模板ID 57c3978eeb710abdd9732e02 -->
+            <div class="info_r" style="width:300px;">
+                <div class="st-pop" id="st-pop">
+                    <s class="st-arr"><i></i></s>
+                    <div class="st-con"> </div>
+                </div>
+                <h3 class="s_name"> {$name}&nbsp;<span>AAAA景区</span> </h3>
+                <p class="s_des">{$brief}</p>
+                <p class="s_com"><em>景点地址：</em> <span>{$address} <a class="markIcon" markid="traffic_route" href="javascript:;"><i></i>地图</a> </span></p>
+                <p class="s_com open_time canhover"><em>开放时间：</em> <span>{$allowtime}<i></i></span> </p>
+                <div class="s-tShow mt10"> <pre>（旺季6月1日-10月15日）7:00-17:00 （淡季10月16日-次年5月31日）8:30-15:00</pre> </div>
+                <p class="s_com service_w"><em>剩余票数：&nbsp;<font color="#50b400">{$balance}</font></p>
+                <p class="s_com service_w"><em>累计人次：&nbsp;<font color="#50b400">{$hot}</font></p>
+                <p class="s_com service_w" ><em><a href="javascript:;"><div id="{$id}"style="font-weight: bold;">加入购物车</div></a></p>
+                <div class="s_com_more"> </div>
+                <script type="text/javascript">
+                     $("#{$id}").click(function(){
+                        $.post("/index/driver/driver", {cate : "{$cate}", spot : "{$spot2}", id : {$id}},
+                            function(data){
+                                if (data) {
+                                    $("#drivers").css("display", "block");
+                                    $("#number").css("display", "block");
+                                    $("#number").text(data);
+                                }   
+                            }, "json");
+                       });
+                </script>
+            </div>
+            <!--价格、点评、促销信息 end-->
+        </div>
+        <!--滚动提醒 start-->
+        <!--滚动提醒 end-->
+        <!--价格框 start-->
+        <!-- 模板ID 57c397bdeb710abdd9732e03 -->
+        <div class="tics mt20 container">
+            
+            <div class="tic-con ">
+                <div id="sAPI_21347" class="sAPI sub_content SRESETCSS1200" style="display:block;overflow:hidden;">
+					<div style="width:120px;height:60px;background-color:#e6e6e6;float:left;font-weight:bold;font-size:16px;text-align:center;line-height:60px;">
+						成人票
+					</div>
+					<div style="width:200px;height:60px;background-color:white;float:left;font-size:10px;line-height:60px;text-align:center;">
+						单票--{$name}单次门票
+					</div>
+					<div style="width:200px;height:60px;background-color:white;float:left;font-size:10px;line-height:60px;text-align:center;font-weight:bold;">
+						当天16:00之前预定
+					</div>
+					<div style="width:250px;height:60px;background-color:white;float:left;font-size:13px;line-height:60px;text-align:center;">
+						票价--<font color="#2c87b5">{$ticket}</font>
+					</div>
+					<div style="width:210px;height:60px;background-color:white;float:left;font-size:16px;line-height:60px;text-align:center;">
+						<span class="order_btn"> 
+							<a href="/index/pay/pay?name={$name}&cate={$cate}">在线支付</a>
+						</span>
+					</div>
+				</div>
+            </div>
+        </div>
+        <!--价格框 end-->
+        <!--信息资源 start-->
+        <div class="res_box_w container" style="margin-left:130px;" style="background-color:#f6f6f6">
+            <div class="r_b_l">
+                <!--导航 start-->
+                <!-- 模板ID 57c3d648eb710abdd97330a7 --
+                <!--导航 end-->
+                <!--预订须知 start-->
+                <div class="res_box_i clearfix" id="book_note_con">
+                    <div class="b_i_t clearfix">
+                        <div class="b_i_t_l"> <em class="line_none"></em> <i></i> <em class="line"></em> </div>
+                        <div class="b_i_t_r">
+                            <h2>预订须知</h2> </div>
+                    </div>
+                    <div class="facilities_icon clearfix" style="width:1000px;">
+                        <div class="icon_name"><img src="__STATIC__/picture/ejgv1u_1.png"><span>停车场</span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/k93q54_1.png"><span>可驾车入园</span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/jivppr_1.png"><span>园内交通</span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/l9di6q_1.png"><span>行李寄存</span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/lkuhko_1.png"><span>手机充电</span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/if4xop_1.png"><span>ATM机 </span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/c4geot_1.png"><span>商店</span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/aprtqe_1.png"><span>餐厅</span></div>
+                        <div class="icon_name"><img src="__STATIC__/picture/mihlcr_1.png"><span>吸烟区</span></div>
+                    </div>
+                    <div class="b_i_m"> </div>
+                </div>
+                <!--预订须知 end-->
+                <!--景点简介 start-->
+                <div class="res_box_i clearfix" id="scenery_intro_con">
+                    <div class="b_i_t clearfix">
+                        <div class="b_i_t_l"> <em class="line"></em> <i></i> <em class="line"></em> </div>
+                        <div class="b_i_t_r">
+                        <h2>景区实拍</h2> </div>
+                    </div>
+                    <div class="b_i_m clearfix">
+                        <div class="inf-f-con">
+							{for start="0" end="$num"}
+								<h4>{$name}</h4>
+								<div class="intro-info">
+									<div class="info-img-w"> <img class="LAZYLOADIMG" src="{$pictures[$i]}" alt=""> </div>
+								 </div>
+							{/for}
+                        </div>
+                    </div>
+                </div>
+                <!--景点简介 end-->
+                <!--游客点评 start-->
+                <div class="res_box_i clearfix" id="tour_comment_con">
+                    <div class="b_i_t clearfix">
+                        <div class="b_i_t_l"> <em class="line"></em> <i></i> <em class="line"></em> </div>
+                        <div class="b_i_t_r">
+                            <h2>游客点评</h2> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear_float"></div>
+        </div>
+        <!--信息资源 end-->
+        <div class="popOutBox none" id="popOut">
+            <div class="popCon photo-album">
+                <div class="slider_pho_w" id="slider_pho_w">
+                    <div class="mSlider_photo">
+                        <ul> </ul>
+                    </div>
+                    <div id="pho_left"></div>
+                    <div id="pho_right"></div>
+                </div>
+                <div class="dp_detail_w">
+                    <div class="dp_detail clearfix">
+                        <div class="detail_l">
+                            <p class="pho_same"> 图片均由网友上传 </p>
+                        </div>
+                        <div class="detail_r"> <span><i class="now">1</i>/<i class="tol">1</i></span> </div>
+                    </div>
+                </div>
+                <a class="pho_close" href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 模板ID 573eda1544656b0d00f6f744 -->
+    <!--cnwidescreenfoot.leonid.start.v904113806102-->
+    <div style="display:block;">
+    </div>
+    <input id="comsilderinfo" type="hidden" value='{"Url":"//www.ly.com/public/bailvhui","SmallPic":"//pic4.40017.cn/index/slide/2016/10/08/14/JrgEa5.jpg","BigPic":"//pic4.40017.cn/index/slide/2016/10/08/14/SXkgWn.jpg","QrPic":"//pic4.40017.cn/index/slide/2016/05/18/17/6JWpBe.png"}' />
+    <script type="text/javascript" src="__STATIC__/js/common.0.3.5_2.js"></script>
+    <script type="text/javascript">
+    if (typeof pageview == "undefined") {
+        var pageview = '/pc/景区详情页2016/';
+        if (pageview == "/") {
+            pageview += document.title;
+        }
+    }
+    </script>
+    <script type="text/javascript">
+    var _tcq = _tcq || [];
+    var _timediff = -1;
+    if (typeof _tcopentime != "undefined") {
+        _timediff = new Date().getTime() - _tcopentime;
+    }
+    _tcq.push(['_serialid', '0']);
+    _tcq.push(['_vrcode', '10002-2003-0']);
+    _tcq.push(['_refId', getRefid()]);
+    _tcq.push(['_userId', fish.getNmemberId()]);
+    _tcq.push(['_openTime', _timediff]);
+    _tcq.push(['_trackPageview', pageview]);
+    _tcq.push(['_resId', fish.getProId()]);
+    _tcq.push(['_qdid', getQdid()]);
+    </script>
+    <script type='text/javascript' src="__STATIC__/js/vst_2.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    <!-- (function (d) { window.bd_cpro_rtid="P1c3Pjm"; var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js"; var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0); })(document); //-->
+    </script>
+    <script src="__STATIC__/js/916bb7036bb544ef82c961958767f3a3.js"></script>
+    <script type="text/javascript">
+    fish.ready(function() {
+        var monitorElem = document.getElementById('commonMonitor'),
+            commonValue;
+        if (monitorElem) {
+            try {
+                commonValue = JSON.parse(monitorElem.value);
+                if (commonValue) {
+                    fedApm.start({
+                        project: commonValue['channel'],
+                        pageName: commonValue['page'],
+                        errStat: 1,
+                        resTimingStat: 1,
+                        ajaxTiming: 1
+                    });
+                }
+            } catch (e) {}
+        }
+    })
+    </script>
+    <!--cnwidescreenfoot.leonid.end-->
+  
+    <!-- 侧边栏 end-->
+    <script src="__STATIC__/js/webpjs.min_2.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/553c8c468c94497090cdb7ae6173ab6c.js"></script>
+    <script src="__STATIC__/js/8aef8e73b7ad4c56a093216a1a80d4c1.js"></script>
+    <script src="__STATIC__/js/898520c4ee3b458f8d5dec09c21945e0.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/4150a85a228b41ca90bc31c725e86fac.js"></script>
+    <script type="text/javascript">
+    var _tcHotmapx = {
+        pid: 453,
+        sp: 100
+    };
+    </script>
+    <script language="javascript" type="text/javascript">
+    var _mai = _mai || [];
+    _mai.push(['_userId', getMemberId()]); //会员ID _mai.push(['_product', '2003']); //产品 _mai.push(['_sceneryId', '21347']); //SceneeryId 景区ID _mai.push(['_cityid', '270']); //城市Id
+    </script>
+    <script language="javascript" type="text/javascript" src="__STATIC__/js/mai_1.js"></script>
+    <script language="javascript" type="text/javascript">
+    var testIds = ["130", "145", "146"];
+    (function() {
+        var ABScript = document.createElement('script');
+        ABScript.type = 'text/javascript';
+        ABScript.async = true;
+        ABScript.src = '//js.40017.cn/cn/new_ui/public/tjcode/abTestRecord.0.0.5.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ABScript, s);
+    })();
+    </script>
+    <!-- Start of DoubleClick Floodlight Tag: Please do not remove Activity name of this tag: 详情页-PV URL of the webpage where the tag is expected to be placed: http://www.ly.com/scenery/BookSceneryTicket_189791.html This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag. Creation Date: 05/29/2016 -->
+    <script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="__STATIC__///5662193.fls.doubleclick.net/activityi;src=5662193;type=-zmfa0;cat=-pvwo0;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script>
+    <noscript>
+        <iframe src="__STATIC__///5662193.fls.doubleclick.net/activityi;src=5662193;type=-zmfa0;cat=-pvwo0;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+    <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+    <!-- Start of DoubleClick Floodlight Tag: Please do not remove Activity name of this tag: 详情页-UV URL of the webpage where the tag is expected to be placed: http://www.ly.com/scenery/BookSceneryTicket_189791.html This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag. Creation Date: 05/29/2016 -->
+    <script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="__STATIC__///5662193.fls.doubleclick.net/activityi;src=5662193;type=-zmfa0;cat=-uvbp0;ord=1;num=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script>
+    <noscript>
+        <iframe src="__STATIC__///5662193.fls.doubleclick.net/activityi;src=5662193;type=-zmfa0;cat=-uvbp0;ord=1;num=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+    <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+</body>
+
+</html>
